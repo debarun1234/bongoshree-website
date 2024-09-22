@@ -1,76 +1,161 @@
-# Getting Started with Create React App
+# Bongoshree Cultural Association, Bangalore - Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the official website project for **Bongoshree Cultural Association, Bangalore**. This platform connects Bengali families living in Bangalore and helps them get acquainted outside of their homeland, West Bengal. The website showcases events, member blogs, a membership drive, and an event calendar.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Firebase Configuration](#firebase-configuration)
+- [Development Guidelines](#development-guidelines)
+- [Contributing](#contributing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About
 
-### `npm test`
+The **Bongoshree Cultural Association** aims to create a community for Bengali families residing in Bangalore. Our website serves as a portal to showcase cultural events, member blogs, and allows new members to join through an easy membership process.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Home**: Introduction to the association and upcoming events.
+- **About Us**: Learn about the association's purpose and history.
+- **Contact Us**: Contact form for users to reach out to the association.
+- **Blog**: Members can upload and view blogs related to the community.
+- **Membership Drive**: Information on how to become a member.
+- **Event Calendar**: View upcoming events and activities.
+- **Social Media Integration**: Links to our official Facebook and Instagram pages.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+This website is built using the following technologies:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **React.js**: JavaScript library for building the user interface.
+- **Vue.js**: Used for blog management, integrated with React components.
+- **Tailwind CSS**: Utility-first CSS framework for custom styling and responsiveness.
+- **Material-UI**: Component library for building the user interface.
+- **Firebase**: Backend for blog management and storage.
+- **Framer Motion**: Animation library for adding smooth animations to the UI.
+- **SWC**: Speed up compilation in React and Vue projects.
+- **TypeScript**: For type safety and improved developer experience.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Setup Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To run this project locally, follow the steps below:
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ensure you have the following installed:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
 
-## Direcoty
+### Step 1: Clone the Repository
+
 ```bash
-bongoshree-website/
-├── public/
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx
-│   │   └── Footer.tsx
-│   ├── pages/
-│   │   ├── AboutUs.tsx
-│   │   ├── Blog.vue
-│   │   ├── ContactUs.tsx
-│   │   ├── EventCalendar.tsx
-│   │   ├── Membership.tsx
-│   │   └── Home.tsx
-│   ├── firebaseConfig.js
-│   ├── App.tsx
-│   ├── index.tsx
-│   ├── index.css
-│   └── tailwind.config.js
-├── .gitignore
-├── package.json
-├── package-lock.json
-└── tsconfig.json
+git clone https://github.com/your-username/bongoshree-website.git
+cd bongoshree-website
 ```
+
+### Step 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### Step 3: Setup Firebase
+
+You will need to set up Firebase to manage the blog submissions. Create a Firebase project and obtain your Firebase credentials. You can refer to the [Firebase Documentation](https://firebase.google.com/docs) to set this up.
+
+### Step 4: Configure Firebase
+
+Add your Firebase configuration to the `src/firebaseConfig.js` file:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+};
+```
+
+### Step 5: Run the Application
+
+```bash
+npm start
+```
+
+## Firebase Configuration
+
+To use Firebase for blog management:
+
+1. Go to [Firebase Console](https://console.firebase.google.com/).
+2. Create a new project.
+3. Enable **Firestore** for storing blog posts.
+4. Add the Firebase credentials to the `firebaseConfig.js` file as shown above.
+5. Deploy the Firestore rules to secure your data.
+
+---
+
+## Development Guidelines
+
+### Styling
+
+This project uses **Tailwind CSS** for custom styling and responsiveness. All global styles are in `src/index.css`. Use Tailwind's utility classes to style your components.
+
+### Routing
+
+We use **React Router** for handling navigation between different pages. If you need to add a new page, create a new component in `src/pages/`, and add the route in `App.tsx`.
+
+### Components
+
+Place all reusable components in the `src/components/` folder. Make sure to follow React's functional component pattern.
+
+### Animations
+
+We use **Framer Motion** to handle animations. If you need to add animations, use the `motion` component provided by Framer Motion.
+
+### Mobile Responsiveness
+
+Ensure that all components are responsive. Use Tailwind CSS's responsive utilities such as `sm:`, `md:`, `lg:`, and `xl:`.
+
+---
+
+## Contributing
+
+We welcome contributions from the community. To contribute:
+
+1. **Fork** the repository.
+2. **Create** a new feature branch: `git checkout -b feature-name`.
+3. **Commit** your changes: `git commit -m 'Add new feature'`.
+4. **Push** the branch to your fork: `git push origin feature-name`.
+5. **Submit** a Pull Request.
+
+### Code Guidelines
+
+- Follow [Airbnb's JavaScript Style Guide](https://github.com/airbnb/javascript).
+- Use meaningful commit messages.
+- Ensure the project passes all tests before submitting.
+
+### Issues
+
+If you encounter any issues, feel free to open a [GitHub Issue](https://github.com/your-username/bongoshree-website/issues).
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
