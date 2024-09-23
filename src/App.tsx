@@ -1,31 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Blog from "./pages/Blog";
-import Membership from "./pages/Membership";
-import EventCalendar from "./pages/EventCalendar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import Membership from './pages/Membership';
+import VueContainer from './components/VueContainer';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Header />
       <div className="min-h-screen">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about-us" component={AboutUs} />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/membership" component={Membership} />
-          <Route path="/event-calendar" component={EventCalendar} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/membership" element={<Membership />} />
+          <Route path="/event-calendar" element={<VueContainer component="EventCalendar" />} />
+          <Route path="/blog" element={<VueContainer component="Blog" />} />
+        </Routes>
       </div>
-      <Footer />
     </Router>
   );
 };
 
 export default App;
+

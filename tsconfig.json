@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es5",                        // Targeting ES5 for maximum browser compatibility
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "allowJs": true,                        // Allows JS files to be compiled
+    "skipLibCheck": true,                   // Skips type checking of declaration files
+    "esModuleInterop": true,                // Enables compatibility for CommonJS modules
+    "allowSyntheticDefaultImports": true,   // Allows default imports from modules with no default export
+    "strict": true,                         // Enables strict type checking
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "module": "esnext",                     // Modern ES module system
+    "moduleResolution": "node",             // Resolves modules in Node.js fashion
+    "resolveJsonModule": true,              // Allows importing JSON modules
+    "isolatedModules": true,                // Ensures each file is treated as a separate module
+    "noEmit": true,                         // Avoids generating output files
+    "jsx": "react-jsx"                      // JSX support for React 17+
   },
   "include": [
     "src"
