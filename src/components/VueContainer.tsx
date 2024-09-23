@@ -9,21 +9,21 @@ interface VueContainerProps {
 
 const VueContainer: React.FC<VueContainerProps> = ({ component }) => {
   const vueMountPoint = useRef<HTMLDivElement | null>(null);
-  let vueApp: any = null;
+  const vueApp = useRef<any>(null);  // Using useRef to persist the Vue app instance across renders
 
   useEffect(() => {
     if (vueMountPoint.current) {
       if (component === 'Blog') {
-        vueApp = createApp(Blog);
+        vueApp.current = createApp(Blog);
       } else if (component === 'EventCalendar') {
-        vueApp = createApp(EventCalendar);
+        vueApp.current = createApp(EventCalendar);
       }
-      vueApp.mount(vueMountPoint.current);
+      vueApp.current.mount(vueMountPoint.current);
     }
 
     return () => {
-      if (vueApp) {
-        vueApp.unmount();
+      if (vueApp.current) {
+        vueApp.current.unmount();
       }
     };
   }, [component]);

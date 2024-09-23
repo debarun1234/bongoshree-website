@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import Membership from './pages/Membership';
-import VueContainer from './components/VueContainer';
+import VueContainer from './components/VueContainer'; // VueContainer for Vue components
 
 const App: React.FC = () => {
   return (
@@ -24,4 +24,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
